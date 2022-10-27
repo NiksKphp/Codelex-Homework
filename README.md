@@ -1,1 +1,3 @@
-# Codelex-Homework
+# Codelex-Mājasdarbi
+
+Niks Kuprēvičs
