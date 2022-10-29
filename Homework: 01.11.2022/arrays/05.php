@@ -1,5 +1,6 @@
 <?php
 
+
 function display_board($row1,$row2,$row3){
     $separator = "---+---+---";
     echo $row1 . PHP_EOL;
