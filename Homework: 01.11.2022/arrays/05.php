@@ -8,7 +8,6 @@ function display_board($row1,$row2,$row3){
     echo $separator . PHP_EOL;
     echo $row3 . PHP_EOL;
 
-
     // Victory conditions;
     //Rows
     if (($row1[1]=="X")&&($row1[5]=="X")&&($row1[9]=="X")||($row1[1]=="O")&&($row1[5]=="O")&&($row1[9]=="O")) {
