@@ -1,6 +1,6 @@
 <?php
 
-function display_board($rowChoice,$columnChoice,$row1,$row2,$row3){
+function display_board($row1,$row2,$row3){
     $separator = "---+---+---";
     echo $row1 . PHP_EOL;
     echo $separator . PHP_EOL;
@@ -10,7 +10,6 @@ function display_board($rowChoice,$columnChoice,$row1,$row2,$row3){
 
 
     // Victory conditions;
-
     //Rows
     if (($row1[1]=="X")&&($row1[5]=="X")&&($row1[9]=="X")||($row1[1]=="O")&&($row1[5]=="O")&&($row1[9]=="O")) {
         echo "Victory for player with last turn" . PHP_EOL;
@@ -46,7 +45,6 @@ function display_board($rowChoice,$columnChoice,$row1,$row2,$row3){
         echo "Victory for player with last turn" . PHP_EOL;
         exit;
     }
-
 }
 
 $gameEnd = false;
@@ -57,81 +55,79 @@ $row3 = "   |   |   ";
 $isXturn = true;
 
 while (true) {
-    if ($isXturn == true){
-        $rowChoice = readline("X choose Row: ");
-        $columnChoice = readline("X choose Column: ");
+    $choice = [];
+    if ($isXturn == false){
+        $choice[] = readline("'O', choose your location (row, column): ");
     } else {
-        $rowChoice = readline("O choose Row: ");
-        $columnChoice = readline("O choose Column: ");
+        $choice[] = readline("'X', choose your location (row, column): ");
     }
 
     // ROW 1
-    if($rowChoice==1){
-        if($columnChoice == 1) {
+    if($choice[0][0]==="1"){
+        if($choice[0][2] == "1") {
             $row1[1] = "X";
         }
-        if ($columnChoice == 1 && !$isXturn) {
+        if ($choice[0][2] == "1" && !$isXturn) {
             $row1[1]="O";
         }
-        if($columnChoice == 2){
+        if($choice[0][2] == "2"){
             $row1[5]="X";
         }
-        if ($columnChoice == 2 && !$isXturn) {
+        if ($choice[0][2] == "2" && !$isXturn) {
             $row1[5]="O";
         }
-        if($columnChoice == 3){
+        if($choice[0][2] == "3"){
             $row1[9]="X";
         }
-        if ($columnChoice == 3 && !$isXturn) {
+        if ($choice[0][2] == "3" && !$isXturn) {
             $row1[9]="O";
         }
     }
-
     // ROW 2
-    if($rowChoice==2){
-        if($columnChoice == 1) {
+    if($choice[0][0]=="2"){
+        if($choice[0][2] == "1") {
             $row2[1] = "X";
         }
-        if ($columnChoice == 1 && !$isXturn) {
+        if ($choice[0][2] == "1" && !$isXturn) {
             $row2[1]="O";
         }
-        if($columnChoice == 2){
+        if($choice[0][2] == "2"){
             $row2[5]="X";
         }
-        if ($columnChoice == 2 && !$isXturn) {
+        if ($choice[0][2] == "2" && !$isXturn) {
             $row2[5]="O";
         }
-        if($columnChoice == 3){
+        if($choice[0][2] == "3"){
             $row2[9]="X";
         }
-        if ($columnChoice == 3 && !$isXturn) {
+        if ($choice[0][2] == "3" && !$isXturn) {
             $row2[9]="O";
         }
     }
 
     // ROW 3
-    if($rowChoice==3){
-        if($columnChoice == 1) {
+    if($choice[0][0]=="3"){
+        if($choice[0][2] == "1") {
             $row3[1] = "X";
         }
-        if ($columnChoice == 1 && !$isXturn) {
+        if ($choice[0][2] == "1" && !$isXturn) {
             $row3[1]="O";
         }
-        if($columnChoice == 2){
+        if($choice[0][2] == "2"){
             $row3[5]="X";
         }
-        if ($columnChoice == 2 && !$isXturn) {
+        if ($choice[0][2] == "2" && !$isXturn) {
             $row3[5]="O";
         }
-        if($columnChoice == 3){
+        if($choice[0][2] == "3"){
             $row3[9]="X";
         }
-        if ($columnChoice == 3 && !$isXturn) {
+        if ($choice[0][2] == "3" && !$isXturn) {
             $row3[9]="O";
         }
     }
 
-    display_board($rowChoice,$columnChoice,$row1,$row2,$row3);
+    display_board($row1,$row2,$row3);
 
     // Whose turn
     if ($isXturn){
