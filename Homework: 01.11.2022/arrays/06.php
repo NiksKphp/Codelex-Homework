@@ -16,41 +16,57 @@ $wordToGuess = $words[array_rand($words)];
 $wordTemplate = str_repeat("-",strlen($words[0]));
 $seperator = "-=-=-=-=-=-=-=-=-=-=-=-=-=-" . PHP_EOL;
 $misses = [];
+$tries = 3;
 echo "debug: " . $wordToGuess . PHP_EOL;
 
-while (true){
-    $input = readline("Input letter: ");
+while (true) {
+    $input = readline("Guess: ");
+    $keypos = strpos($wordToGuess, $input);
+
+    //validate input
+    if ((in_array($input, $misses)) || ($wordTemplate[$keypos] == $input)) {
+        echo PHP_EOL . "This character was already used" . PHP_EOL;
+    }
+
+    if (strpos($wordToGuess, $input) !== false) {
+        $wordTemplate[$keypos] = $input;
+    } else {
+        echo "Word: " . $wordTemplate . PHP_EOL;
+        echo "Misses: ";
+        array_push($misses, $input);
+        $tries--;
+    }
+
     echo PHP_EOL;
 
-    if (in_array($input,$misses)){
-        echo "DOUBLE" . PHP_EOL;
+    if (!(strpos($wordTemplate, "-") !== false)) {
+        echo $seperator . PHP_EOL;
+        echo "Word: " . $wordToGuess . PHP_EOL;
+        echo PHP_EOL . "YOU GOT IT!" . PHP_EOL;
+        $again = readline("Play again or exit?: ");
+            if ($again == "again"){
+                continue;
+            }
+            if ($again == "exit"){
+                exit;
+            }
     }
 
-    if (strpos($wordToGuess, $input) !== false){
-       $keypos = strpos($wordToGuess, $input);
-       $wordTemplate[$keypos]=$input;
-        echo "Word: " . $wordTemplate;
-    } else {
-        echo "Word: " . $wordTemplate;
-        echo PHP_EOL;
-        echo "Misses: ";
-        array_push($misses,$input);
-        foreach ($misses as $miss){
-            echo $miss;
-        }
-        echo PHP_EOL;
-    }
-
-    if ($input==$wordToGuess) {
-        echo "Word is correct" . PHP_EOL;
+    if ($tries == 0) {
+        echo "You ran out of tries" . PHP_EOL;
         exit;
     }
 
-    echo PHP_EOL;
+
+    echo $seperator . PHP_EOL;
+    echo "Word: " . $wordTemplate . PHP_EOL;
+    echo "Misses: ";
+
+    foreach ($misses as $miss) {
+        echo $miss;
+    }
+    echo PHP_EOL. PHP_EOL;
 }
-
-
-
 
 
 
