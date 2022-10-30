@@ -45,6 +45,12 @@ function display_board($row1,$row2,$row3){
         echo "Victory for player with last turn" . PHP_EOL;
         exit;
     }
+
+    if (!($row1[1]==" ")&&!($row1[5]==" ")&&!($row1[9]==" ")&&!($row2[1]==" ")&&!($row2[5]==" ")&&!($row2[9]==" ")&&!($row3[1]==" ")&&!($row3[5]==" ")&&!($row3[9]==" ")){
+        echo "Tie" . PHP_EOL;
+        exit;
+    }
+
 }
 
 $gameEnd = false;
