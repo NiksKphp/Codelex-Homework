@@ -7,8 +7,8 @@ Take note that it is the same as factorial of N.
 
 $numbers = range(1, 10);
 
-function productCacl($input){
+function productCalc($input){
     echo array_product($input);
 }
 
-productCacl($numbers);
+productCalc($numbers);

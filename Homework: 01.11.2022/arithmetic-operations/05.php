@@ -33,7 +33,7 @@ function guesser($input,$number){
         echo "Sorry, you are too low.  I was thinking of $number.";
     }
     if ($input>$number){
-        echo "Sorry, you are too high 🚬.  I was thinking of $number.";
+        echo "Sorry, you are too high.  I was thinking of $number.";
     }
     echo PHP_EOL;
 }
