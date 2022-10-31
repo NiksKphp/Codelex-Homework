@@ -10,7 +10,7 @@ Write a program to play a word-guessing game like Hangman.
 
  */
 
-$words = ["word","table","code","fish","key"];
+$words = ["word","table","code","fish","key","bike"];
 $wordToGuess = $words[array_rand($words)];
 $wordTemplate = str_repeat("-",strlen($words[0]));
 $seperator = "-=-=-=-=-=-=-=-=-=-=-=-=-=-" . PHP_EOL;
