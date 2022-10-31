@@ -10,14 +10,12 @@ Write a program to play a word-guessing game like Hangman.
 
  */
 
-//$words = ["word","table","code","fish","key"];
-$words = ["key"];
+$words = ["word","table","code","fish","key"];
 $wordToGuess = $words[array_rand($words)];
 $wordTemplate = str_repeat("-",strlen($words[0]));
 $seperator = "-=-=-=-=-=-=-=-=-=-=-=-=-=-" . PHP_EOL;
 $misses = [];
 $tries = 3;
-echo "debug: " . $wordToGuess . PHP_EOL;
 
 while (true) {
     $input = readline("Guess: ");
