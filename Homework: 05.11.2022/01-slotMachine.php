@@ -10,7 +10,7 @@ $earned = 0;
 $symbols = ["❂","☎","✱","☢","♬"];
 
 //Functions
-function displaySlotMachine($reels){
+function displaySlotMachine(array $reels){
     echo PHP_EOL . " _-_ Slot Machine _-_" . PHP_EOL;
     echo "  | {$reels[0][0]} | {$reels[0][1]} | {$reels[0][2]} | {$reels[0][3]} |";
     echo PHP_EOL . "  -----------------" . PHP_EOL;
@@ -21,7 +21,7 @@ function displaySlotMachine($reels){
     echo PHP_EOL;
 }
 
-function runSlotMachine($reels,$symbols,$money,$lost,$earned){
+function runSlotMachine(array $reels, array $symbols, int $money, int$lost, int $earned):int {
 
     //adds winnings to total money
     $money = $earned + $money;
@@ -94,7 +94,7 @@ function runSlotMachine($reels,$symbols,$money,$lost,$earned){
     return $earned;
 }
 
-function winnings($symbol,$symbols){
+function winnings(string $symbol, array $symbols):int {
     if ($symbol==$symbols[0]){
         return 50;
     }
