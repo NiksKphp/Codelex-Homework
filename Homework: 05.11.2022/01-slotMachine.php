@@ -13,11 +13,11 @@ $symbols = ["❂","☎","✱","☢","♬"];
 function displaySlotMachine($reels){
     echo PHP_EOL . " _-_ Slot Machine _-_" . PHP_EOL;
     echo "  | {$reels[0][0]} | {$reels[0][1]} | {$reels[0][2]} | {$reels[0][3]} |";
-    echo PHP_EOL . "  -----------------      O " . PHP_EOL;
-    echo "  | {$reels[1][0]} | {$reels[1][1]} | {$reels[1][2]} | {$reels[1][3]} |      | ";
-    echo PHP_EOL . "  -----------------      |" . PHP_EOL;
-    echo "  | {$reels[2][0]} | {$reels[2][1]} | {$reels[2][2]} | {$reels[2][3]} |      |";
-    echo PHP_EOL . "  _-_-_-_-_-_-_-_-______-|-_" . PHP_EOL;
+    echo PHP_EOL . "  -----------------" . PHP_EOL;
+    echo "  | {$reels[1][0]} | {$reels[1][1]} | {$reels[1][2]} | {$reels[1][3]} |";
+    echo PHP_EOL . "  -----------------" . PHP_EOL;
+    echo "  | {$reels[2][0]} | {$reels[2][1]} | {$reels[2][2]} | {$reels[2][3]} |";
+    echo PHP_EOL . "  _-_-_-_-_-_-_-_-_" . PHP_EOL;
     echo PHP_EOL;
 }
 
