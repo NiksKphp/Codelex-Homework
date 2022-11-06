@@ -1,13 +1,13 @@
 <?php
 
-$input = readline("Desired sum: ");
+$input = (int) readline("Desired sum: ");
 echo $input.PHP_EOL;
 
 $result = new RollTwoDice();
 $result->rollDice($input);
 
 class RollTwoDice {
-    public function rollDice($desiredSum) {
+    public function rollDice(int $desiredSum):string {
         while (true){
             for ($i = 0; $i < 50; $i++){
                 $diceOne = rand(1,6);

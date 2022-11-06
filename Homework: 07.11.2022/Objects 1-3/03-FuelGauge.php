@@ -34,7 +34,7 @@ class Odometer
         $this->mileage = $mileage;
     }
 
-    public function reportMileage()
+    public function reportMileage():string
     {
         return "Car has $this->mileage mileage";
     }
@@ -52,10 +52,12 @@ class Odometer
 $carFuel= new FuelGauge(50);
 $carMileage = new Odometer(10);
 
-//driving
-$kmToDrive = 20;
-$howManyKilometersPerLiter = 10;
 
+$kmToDrive = 20; // Distance to Drive
+$howManyKilometersPerLiter = 10; // Car effectivity
+
+
+//Car driving
 for ($i=1;$i<=$kmToDrive;$i++){
     $howManyKilometersPerLiter = $howManyKilometersPerLiter-1;
     $carMileage->incrementMileage();
@@ -65,5 +67,6 @@ for ($i=1;$i<=$kmToDrive;$i++){
     }
 }
 
+//Output result
 echo $carFuel->reportFuel().PHP_EOL;
 echo $carMileage->reportMileage().PHP_EOL;

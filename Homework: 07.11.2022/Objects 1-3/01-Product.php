@@ -9,17 +9,17 @@ class Product
         $this->amount = $amount;
     }
 
-    public function productInformation()
+    public function productInformation():string
     {
         return "$this->name, $this->price EUR, $this->amount";
     }
 
-    public function changeQuanity(int $quanity)
+    public function changeQuanity(int $quanity):string
     {
         $newQuantity = $this->amount+$quanity;
         return "$this->name, $this->price EUR, $newQuantity";
     }
-    public function changePrice(int $price)
+    public function changePrice(int $price):string
     {
         $newPrice = $price;
         return "$this->name, $this->price EUR, $newPrice";
@@ -39,3 +39,4 @@ echo PHP_EOL;
 echo $productThree->changeQuanity(5);
 echo PHP_EOL;
 echo $productThree->changePrice(5.00);
+echo PHP_EOL;

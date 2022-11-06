@@ -1,6 +1,6 @@
 <?php
 
-// Nav 100% precīzi pēc instrukcijas, bet rezultāts ir tas pats.
+//todo vēl piestrādāt, rezultāts nesakrīt 100% pēc noteikumiem
 
 class Point
 {
@@ -9,7 +9,7 @@ class Point
         $this->x = $x;
         $this->y = $y;
     }
-    public function swap()
+    public function swap():string
     {
         $Swap1 = $this->y;
         $Swap2 = $this->x;

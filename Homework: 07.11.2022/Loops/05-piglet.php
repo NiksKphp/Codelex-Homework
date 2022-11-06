@@ -17,14 +17,14 @@ while (true){
         if ($input=="Y"){
             $score++;
             $result = new Piglet();
-            $result->fizzyBuzz();
+            $result->rollDice();
             echo " Your score is $score." . PHP_EOL;
         }
     }
 }
 
 class Piglet {
-    public function fizzyBuzz() {
+    public function rollDice() {
         $roll = rand(1,6);
         if ($roll >= 2) {
             echo "You rolled $roll!";

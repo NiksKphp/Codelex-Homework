@@ -1,11 +1,4 @@
 <?php
-//declare(strict_types = 1);
-
-//$products = [
-//    "Chips" => 200,
-//    "Cola" => 150,
-//    "Vegetables" => 100
-//];
 
 $products = [
     ['Chips', 200],
@@ -14,7 +7,6 @@ $products = [
     ['Vegetables', 100],
     ['Water', 50],
 ];
-
 
 function moneyFormatter($money):string {
     $money = $money/100;
