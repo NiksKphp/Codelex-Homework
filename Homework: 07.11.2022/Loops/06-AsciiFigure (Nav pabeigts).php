@@ -13,6 +13,6 @@ class AsciiFigure {
     }
 }
 
-$goodbye = new AsciiFigure();
-$goodbye->asciiFigure();
+$ascii = new AsciiFigure();
+$ascii->asciiFigure();
 echo PHP_EOL . PHP_EOL;
