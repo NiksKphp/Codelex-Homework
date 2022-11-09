@@ -2,20 +2,20 @@
 
 class Dog {
     private string $name;
-    private string $sex;
+    private string $maleOrFemale;
 
-    public function __construct(string $name, string $sex){
+    public function __construct(string $name, string $maleOrFemale){
         $this->name = $name;
-        $this->sex = $sex;
+        $this->maleOrFemale = $maleOrFemale;
     }
 }
 
 class DogTest {
 
     public function Main(array $dogs) {
-        for ($i = 0; $i < count($dogs); $i++) {
-            ${"Dog$i"} = new Dog($dogs[$i][0],$dogs[$i][1]);
-        }
+//        for ($i = 0; $i < count($dogs); $i++) {
+//            ${"Dog$i"} = new Dog($dogs[$i][0],$dogs[$i][1]);
+//        }
     }
 }
 
