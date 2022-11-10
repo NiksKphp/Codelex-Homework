@@ -29,24 +29,27 @@ $elements = [
     $spock
 ];
 
-foreach ($elements as $key => $element) {
-    echo "[{$key}] {$element->getName()}" . PHP_EOL;
+
+//Run AI vs AI n times
+$n = 10;
+
+for ($i=0;$i<$n;$i++){
+    $selectedElement = $elements[array_rand($elements)];
+    $opponentElement = $elements[array_rand($elements)];
+
+    $game = new Game ($selectedElement,$opponentElement);
+    $winner = $game->getWinner();
+
+    echo "{$selectedElement->getName()} VS {$opponentElement->getName()}";
+    echo PHP_EOL;
+
+    if ($winner === null) {
+        echo "The game was tie!";
+        echo PHP_EOL. PHP_EOL;
+        continue;
+    }
+    echo "Winner: " .$winner->getName();
+    echo PHP_EOL. PHP_EOL;
 }
 
-$selection = (int) readline('Enter element: ');
 
-$selectedElement = $elements[$selection];
-$opponentElement = $elements[array_rand($elements)];
-
-$game = new Game ($selectedElement,$opponentElement);
-$winner = $game->getWinner();
-
-echo "{$selectedElement->getName()} VS {$opponentElement->getName()}";
-echo PHP_EOL;
-
-if ($winner === null) {
-    echo "The game was tie!";
-    exit;
-}
-
-echo "Winner: " .$winner->getName();
